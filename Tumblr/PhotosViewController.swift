@@ -72,7 +72,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 self.tableView.reloadData()
-               // self.refreshControl.endRefreshing()
+                //self.refreshControl.endRefreshing()
             }
         }
          task.resume()
