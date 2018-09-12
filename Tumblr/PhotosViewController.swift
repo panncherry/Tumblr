@@ -28,30 +28,36 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         fetchPhotos()
         }
     
-    //this method refresh the page and fetch movies
+    //code to fetch photos when pull to refresh
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
         fetchPhotos()
     }
     
-    //this method tells how many cells we are going to have
+    //code to get photo counts
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    //this method tells what the cell is going to be
+    //code to get the photo and display
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]]{
+           // photoImageView = UIImageView(frame: frame)
             let photo = photos[0]
             let originalSize = photo["original_size"] as! [String: Any]
             let urlString = originalSize["url"] as! String
             let url = URL(string: urlString)
-            cell.photoImageView.af_setImage(withURL: url!)
+            let placeholderImage = UIImage(named: "placeholder")
+            let filter = AspectScaledToFillSizeWithRoundedCornersFilter(
+                size: cell.photoImageView.frame.size,
+                radius: 20.0)
+            cell.photoImageView.af_setImage(withURL: url!,placeholderImage: placeholderImage, filter: filter,imageTransition: .crossDissolve(0.2)
+            )}
+            return cell
         }
-        return cell
-    }
     
+    //code to fetch photos
     func fetchPhotos(){
         let url = URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV")!
         
@@ -65,6 +71,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             (data, response, error) in
             if let error = error {
                 print(error.localizedDescription)
+                self.networkErrorAlert(title: "Network Error", message: "Please try again later.")
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 print(dataDictionary)
@@ -79,20 +86,29 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
          task.resume()
     }
     
+    //code to display error message when network fails
+    func networkErrorAlert(title:String, message:String){
+        let networkErrorAlert = UIAlertController(title: "Network Error", message: "The internet connection appears to be offline. Please try again later.", preferredStyle: UIAlertControllerStyle.alert)
+            networkErrorAlert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: { (action) in self.fetchPhotos()}))
+        self.present(networkErrorAlert, animated: true, completion: nil)
+    }
+    
+    //code to load more data
     func loadMoreData() {
         
         let url = URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV")!
         // ... Create the NSURLRequest (myRequest) ...
+        //NSURLSession.sharedSession().dataTaskWithURL(resourceUrl, completionHandler: {(data, response, requestError) -> Void in
+
         let myRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         
         // Configure session so that completion handler is executed on main UI thread
-        let session = URLSession(configuration: URLSessionConfiguration.default,
-                                 delegate:nil,
-                                 delegateQueue:OperationQueue.main
+        let session = URLSession(configuration: URLSessionConfiguration.default, delegate:nil, delegateQueue:OperationQueue.main
         )
         let task : URLSessionDataTask = session.dataTask(with: myRequest, completionHandler: { (data, response, error) in
             if let error = error {
                 print(error.localizedDescription)
+                self.networkErrorAlert(title: "Network Error", message: "Please try again later.")
             } else if let data = data {
                 // Update flag
                 self.isMoreDataLoading = false
@@ -103,12 +119,14 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 self.tableView.reloadData()
-                //self.refreshControl.endRefreshing()
+               // self.refreshControl.endRefreshing()
             }
         })
         task.resume()
     }
-   
+    
+
+    //code to display more results when scrolling
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (!isMoreDataLoading) {
             // Calculate the position of one screen length before the bottom of the results
