@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08019E33214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08019E32214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift */; };
 		0813CD322141F52C00B866FA /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0813CD312141F52C00B866FA /* PhotosViewController.swift */; };
 		0813CD342146200A00B866FA /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0813CD332146200A00B866FA /* PhotoCell.swift */; };
 		089EFD762141F11300D3AE6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089EFD752141F11300D3AE6B /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08019E32214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		0813CD312141F52C00B866FA /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		0813CD332146200A00B866FA /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		089EFD722141F11300D3AE6B /* Tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 				089EFD7C2141F11400D3AE6B /* Assets.xcassets */,
 				089EFD7E2141F11400D3AE6B /* LaunchScreen.storyboard */,
 				089EFD812141F11400D3AE6B /* Info.plist */,
+				08019E32214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift */,
 			);
 			path = Tumblr;
 			sourceTree = "<group>";
@@ -155,7 +158,6 @@
 				52847301C84979E24E82019F /* Pods-TumblrUITests.debug.xcconfig */,
 				3C16DA8FCB695463A930E9BF /* Pods-TumblrUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -305,15 +307,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TumblrTests-checkManifestLockResult.txt",
 			);
@@ -327,16 +325,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tumblr/Pods-Tumblr-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
@@ -351,15 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TumblrUITests-checkManifestLockResult.txt",
 			);
@@ -373,15 +363,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Tumblr-checkManifestLockResult.txt",
 			);
@@ -397,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08019E33214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift in Sources */,
 				089EFD762141F11300D3AE6B /* AppDelegate.swift in Sources */,
 				0813CD342146200A00B866FA /* PhotoCell.swift in Sources */,
 				0813CD322141F52C00B866FA /* PhotosViewController.swift in Sources */,

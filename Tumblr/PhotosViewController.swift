@@ -28,11 +28,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         fetchPhotos()
         }
     
-    //code to fetch photos when pull to refresh
-    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
-        fetchPhotos()
-    }
-    
     //code to get photo counts
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -48,12 +43,13 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             let originalSize = photo["original_size"] as! [String: Any]
             let urlString = originalSize["url"] as! String
             let url = URL(string: urlString)
-            let placeholderImage = UIImage(named: "placeholder")
+            cell.photoImageView.af_setImage(withURL: url!)
+           /* let placeholderImage = UIImage(named: "placeholder")
             let filter = AspectScaledToFillSizeWithRoundedCornersFilter(
                 size: cell.photoImageView.frame.size,
                 radius: 20.0)
             cell.photoImageView.af_setImage(withURL: url!,placeholderImage: placeholderImage, filter: filter,imageTransition: .crossDissolve(0.2)
-            )}
+            )*/}
             return cell
         }
     
@@ -80,10 +76,16 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 self.tableView.reloadData()
-                //self.refreshControl.endRefreshing()
+                self.refreshControl.endRefreshing()
             }
         }
          task.resume()
+    }
+    
+    
+    //code to fetch photos when pull to refresh
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
+        fetchPhotos()
     }
     
     //code to display error message when network fails
@@ -91,6 +93,30 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let networkErrorAlert = UIAlertController(title: "Network Error", message: "The internet connection appears to be offline. Please try again later.", preferredStyle: UIAlertControllerStyle.alert)
             networkErrorAlert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: { (action) in self.fetchPhotos()}))
         self.present(networkErrorAlert, animated: true, completion: nil)
+    }
+    
+    /*
+    //code to pass the photo to detail screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Get a reference to the PhotoDetailsViewController
+        let vc = segue.destination as! PhotoDetailsViewController
+        //Get the cell that triggered the segue
+        let cell = sender as! UITableViewCell
+        //Get the indexPath of the selected phot
+        let indexPath = tableView.indexPath(for: cell)!
+        //Set the photo property of the PhotoDetailsViewController
+        let post = posts[indexPath.row]
+        vc.post = post
+    }*/
+    
+    //code to connect with detailViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let post = posts[indexPath.row]
+            let photoDetailsViewController = segue.destination as! PhotoDetailsViewController
+            photoDetailsViewController.post = post
+        }
     }
     
     //code to load more data
@@ -119,7 +145,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 self.tableView.reloadData()
-               // self.refreshControl.endRefreshing()
+                self.refreshControl.endRefreshing()
             }
         })
         task.resume()

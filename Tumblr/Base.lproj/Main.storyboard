@@ -23,26 +23,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="201" id="wUN-yf-D7d" customClass="PhotoCell" customModule="Tumblr" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="201" id="wUN-yf-D7d" customClass="PhotoCell" customModule="Tumblr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="201"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wUN-yf-D7d" id="bUr-Gv-pij">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="200.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHK-nO-6qh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHK-nO-6qh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="201"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="VHK-nO-6qh" firstAttribute="centerY" secondItem="bUr-Gv-pij" secondAttribute="centerY" id="5tG-8p-fuO"/>
-                                                <constraint firstAttribute="trailing" secondItem="VHK-nO-6qh" secondAttribute="trailing" id="b0f-wK-c4X"/>
-                                                <constraint firstItem="VHK-nO-6qh" firstAttribute="top" secondItem="bUr-Gv-pij" secondAttribute="top" id="mOe-eU-5yn"/>
-                                                <constraint firstItem="VHK-nO-6qh" firstAttribute="leading" secondItem="bUr-Gv-pij" secondAttribute="leading" id="uXN-tL-xqa"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photoImageView" destination="VHK-nO-6qh" id="R3t-HL-wJB"/>
+                                            <segue destination="BGk-Gv-673" kind="show" id="Pys-Kq-zcA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -60,6 +56,31 @@
             </objects>
             <point key="canvasLocation" x="1078.2608695652175" y="132.06521739130434"/>
         </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="A0g-he-yRQ">
+            <objects>
+                <viewController id="BGk-Gv-673" customClass="PhotoDetailsViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cTI-vB-CvG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="032-hy-jEP">
+                                <rect key="frame" x="0.0" y="64" width="414" height="288"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LzA-nq-z0G"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SCx-H9-x0a"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="032-hy-jEP" id="qz9-4j-ikm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXF-95-bex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1966.6666666666667" y="131.25"/>
+        </scene>
         <!--Tumblr - Photo Feeds-->
         <scene sceneID="K3a-15-lV0">
             <objects>
@@ -76,7 +97,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hB-JT-XqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="791.15442278860576"/>
+            <point key="canvasLocation" x="51" y="132"/>
         </scene>
     </scenes>
 </document>
