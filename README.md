@@ -75,9 +75,9 @@ The following **stretch** user stories are implemented:
 The following **additional** user stories are implemented:
 
 - [x] List anything else that you can get done to improve the app functionality! (+1-3pts)
-... []User sees image transition for images coming from network, not when it is loaded from cache
-... []Customize the selection effect of the cell
-... []User sees alert message when there is no internet connection
+-... []User sees image transition for images coming from network, not when it is loaded from cache
+-... []Customize the selection effect of the cell
+-... []User sees alert message when there is no internet connection
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -88,7 +88,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/kQsaeH8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/E1kaRNJ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
