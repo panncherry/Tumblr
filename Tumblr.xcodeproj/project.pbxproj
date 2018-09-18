@@ -16,6 +16,8 @@
 		089EFD802141F11400D3AE6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 089EFD7E2141F11400D3AE6B /* LaunchScreen.storyboard */; };
 		089EFD8B2141F11400D3AE6B /* TumblrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089EFD8A2141F11400D3AE6B /* TumblrTests.swift */; };
 		089EFD962141F11400D3AE6B /* TumblrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089EFD952141F11400D3AE6B /* TumblrUITests.swift */; };
+		08DE52EA214CA66E00AE45E2 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DE52E9214CA66E00AE45E2 /* InfiniteScrollActivityView.swift */; };
+		08DE52EE214CD7A600AE45E2 /* TableViewHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DE52ED214CD7A500AE45E2 /* TableViewHeaderLabel.swift */; };
 		4C35635F584B6EDB0074E2C0 /* Pods_Tumblr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23DE67B091B2A423BEBBC88B /* Pods_Tumblr.framework */; };
 		B10B1825FDE76F36E07A3938 /* Pods_TumblrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D4B99010A41606424982B1 /* Pods_TumblrTests.framework */; };
 		C6203F88AE4C651E31942FBD /* Pods_TumblrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4058CE90FB355E53FC1290A0 /* Pods_TumblrUITests.framework */; };
@@ -54,6 +56,8 @@
 		089EFD912141F11400D3AE6B /* TumblrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TumblrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		089EFD952141F11400D3AE6B /* TumblrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrUITests.swift; sourceTree = "<group>"; };
 		089EFD972141F11400D3AE6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08DE52E9214CA66E00AE45E2 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
+		08DE52ED214CD7A500AE45E2 /* TableViewHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderLabel.swift; sourceTree = "<group>"; };
 		10D4B99010A41606424982B1 /* Pods_TumblrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TumblrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DE67B091B2A423BEBBC88B /* Pods_Tumblr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tumblr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C16DA8FCB695463A930E9BF /* Pods-TumblrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TumblrUITests.release.xcconfig"; path = "Target Support Files/Pods-TumblrUITests/Pods-TumblrUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +97,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08961659214F8002000513C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0813CD332146200A00B866FA /* PhotoCell.swift */,
+				08DE52E9214CA66E00AE45E2 /* InfiniteScrollActivityView.swift */,
+				08DE52ED214CD7A500AE45E2 /* TableViewHeaderLabel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0896165A214F800E000513C9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0813CD312141F52C00B866FA /* PhotosViewController.swift */,
+				08019E32214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		089EFD692141F11300D3AE6B = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +142,12 @@
 			isa = PBXGroup;
 			children = (
 				089EFD752141F11300D3AE6B /* AppDelegate.swift */,
-				0813CD312141F52C00B866FA /* PhotosViewController.swift */,
-				0813CD332146200A00B866FA /* PhotoCell.swift */,
+				0896165A214F800E000513C9 /* ViewControllers */,
+				08961659214F8002000513C9 /* View */,
 				089EFD792141F11300D3AE6B /* Main.storyboard */,
 				089EFD7C2141F11400D3AE6B /* Assets.xcassets */,
 				089EFD7E2141F11400D3AE6B /* LaunchScreen.storyboard */,
 				089EFD812141F11400D3AE6B /* Info.plist */,
-				08019E32214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift */,
 			);
 			path = Tumblr;
 			sourceTree = "<group>";
@@ -243,13 +265,16 @@
 				TargetAttributes = {
 					089EFD712141F11300D3AE6B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					089EFD852141F11400D3AE6B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 089EFD712141F11300D3AE6B;
 					};
 					089EFD902141F11400D3AE6B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 089EFD712141F11300D3AE6B;
 					};
 				};
@@ -327,11 +352,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tumblr/Pods-Tumblr-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
@@ -383,6 +410,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DE52EE214CD7A600AE45E2 /* TableViewHeaderLabel.swift in Sources */,
+				08DE52EA214CA66E00AE45E2 /* InfiniteScrollActivityView.swift in Sources */,
 				08019E33214A1DCB00E8FDA6 /* PhotoDetailsViewController.swift in Sources */,
 				089EFD762141F11300D3AE6B /* AppDelegate.swift in Sources */,
 				0813CD342146200A00B866FA /* PhotoCell.swift in Sources */,
@@ -569,7 +598,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.Tumblr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -588,7 +617,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.Tumblr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -609,7 +638,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.TumblrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tumblr.app/Tumblr";
 			};
@@ -631,7 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.TumblrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tumblr.app/Tumblr";
 			};
@@ -652,7 +681,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.TumblrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Tumblr;
 			};
@@ -673,7 +702,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.TumblrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Tumblr;
 			};

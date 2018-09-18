@@ -18,4 +18,6 @@ target 'Tumblr' do
     # Pods for testing
   end
 
+pod 'AFNetworking'
+
 end
