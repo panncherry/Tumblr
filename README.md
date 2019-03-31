@@ -20,6 +20,7 @@ Tumblr is a photo browing app that allows users to read and write Tumblr blog an
 
 
 ## User Stories
+The following **required** functionality is completed:
 
 - [x] User can scroll through a feed of images returned from the Tumblr API
 - [x] User sees an alert when there's a networking error
