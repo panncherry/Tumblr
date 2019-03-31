@@ -3,6 +3,19 @@
 Tumblr is a photo browing app that allows users to read and write Tumblr blog and post data, retrieve posts by tags, get user information, follow blogs and like posts. 
 
 
+## API
+
+[The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts), Social Blogging API allows users to read and write Tumblr blog and post data, retrieve posts by tags, get user information, follow blogs and like posts. Data is formatted in JSON and support for JSONP is included.
+
+
+## Language, Pods and Frameworks
+
+- [x] Swift
+- [x] AFNetworking
+- [x] Alamofire
+- [x] AlamofireImage
+
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
@@ -29,18 +42,6 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 -... []Customize the selection effect of the cell
 -... []User sees alert message when there is no internet connection
 
-
-## API
-
-[The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts), Social Blogging API allows users to read and write Tumblr blog and post data, retrieve posts by tags, get user information, follow blogs and like posts. Data is formatted in JSON and support for JSONP is included.
-
-
-## Language, Pods and Frameworks
-
-- [x] Swift
-- [x] AFNetworking
-- [x] Alamofire
-- [x] AlamofireImage
 
 
 ## License
