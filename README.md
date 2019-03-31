@@ -16,15 +16,6 @@ Tumblr is a photo browing app that allows users to read and write Tumblr blog an
 - [x] AlamofireImage
 
 
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
-<img src='https://i.imgur.com/suLlvWq.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />  <img src='https://i.imgur.com/KdnGFYo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
-
 ## User Stories
 
 
@@ -41,6 +32,16 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 -... []User sees image transition for images coming from network, not when it is loaded from cache
 -... []Customize the selection effect of the cell
 -... []User sees alert message when there is no internet connection
+
+
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://i.imgur.com/suLlvWq.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />  <img src='https://i.imgur.com/KdnGFYo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 
 
