@@ -3,9 +3,11 @@
 Tumblr is a photo browing app that allows users to read and write Tumblr blog and post data, retrieve posts by tags, get user information, follow blogs and like posts. 
 
 
+
 ## API
 
 [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts), Social Blogging API allows users to read and write Tumblr blog and post data, retrieve posts by tags, get user information, follow blogs and like posts. Data is formatted in JSON and support for JSONP is included.
+
 
 
 ## Language, Pods and Frameworks
@@ -16,8 +18,8 @@ Tumblr is a photo browing app that allows users to read and write Tumblr blog an
 - [x] AlamofireImage
 
 
-## User Stories
 
+## User Stories
 
 - [x] User can scroll through a feed of images returned from the Tumblr API
 - [x] User sees an alert when there's a networking error
