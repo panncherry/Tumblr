@@ -22,16 +22,12 @@ Tumblr is a photo browing app that allows users to read and write Tumblr blog an
 - [x] User can scroll through a feed of images returned from the Tumblr API
 - [x] User sees an alert when there's a networking error
 - [x] While poster is being fetched, user see's a placeholder image
-- [ ] User sees image transition for images coming from network, not when it is loaded from cache
-- [ ] Customize the selection effect of the cell
 - [x] User can tab an image to view a larger image in a detail view
 - [x] Add Avatar and Publish Dates
 - [x] Zoomable Photo View
 - [x] Infinite Scrolling
-- [x] List anything else that you can get done to improve the app functionality
--... []User sees image transition for images coming from network, not when it is loaded from cache
--... []Customize the selection effect of the cell
--... []User sees alert message when there is no internet connection
+- [x] User sees image transition for images coming from network, not when it is loaded from cache
+- [x] Customize the selection effect of the cell
 
 
 
